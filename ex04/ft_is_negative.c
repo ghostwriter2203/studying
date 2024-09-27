@@ -5,7 +5,7 @@ char r ;
 if (n <0 ){
 r = 'N';
 write (1, &r,1);}
-else if(n>0) || (n==0){
+else if((n>0) || (n==0)){
 r = 'P';
 write (1, &r, 1);
 }}
