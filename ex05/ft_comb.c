@@ -1,37 +1,36 @@
 #include<unistd.h>
 
-void  ft_3numbers(char n1, char n2, char n3){
-write(1, &n1, 1);
-write(1, &n2, 1);
-write(1, &n3, 1);
-
-if (!(n1 == '7') || (n2 =='8') || (n3 =='9')){
-write(1, ", ", 2);}}
-
 void ft_comb(void){
-char n1, n2, n3;
+char v[3];
 
-n1 = '0';
+v[0] = '0';
 
-while(n1  <= '7'){
+while(v[0]  <= '7'){
 
-n2 = n1+1;
+	v[1] = v[0]+1;
 
-while(n2<='8'){
-n3 = n2+1;
+		while(v[1]<='8'){
+			v[2] = v[1]+1;
 
-while (n3 <='9'){
-ft_3numbers(n1, n2, n3);
-n3++;
+			while (v[2] <='9'){
+				write(1, &v[0], 1);
+				write(1, &v[1], 1);
+				write(1, &v[2], 1);
+				
+				if (!(v[0] == '7') || (v[1] == '8') || (v[2] =='9')){
+					write(1, ", ", 2);
+			}
+v[2]++;
 
 }
 
-n2++;
+v[1]++;
 
 }
-n1++;
+v[0]++;
 }
 }
 int main(){
 ft_comb();
-return 0;}
+return 0;
+}
