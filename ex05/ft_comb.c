@@ -1,33 +1,23 @@
 #include<unistd.h>
 
 void ft_comb(void){
-char v[3];
 
-v[0] = '0';
+for (char n1 = '0';   n1 <= '7'; n1++){
 
-while(v[0]  <= '7'){
+		for(char n2 = n1+1 ; n2<='8'; n2++){
 
-	v[1] = v[0]+1;
-
-		while(v[1]<='8'){
-			v[2] = v[1]+1;
-
-			while (v[2] <='9'){
-				write(1, &v[0], 1);
-				write(1, &v[1], 1);
-				write(1, &v[2], 1);
+			for (char n3 = n2+1; n3 <='9'; n3++){
+				write(1, &n1, 1);
+				write(1, &n2, 1);
+				write(1, &n3, 1);
 				
-				if (!(v[0] == '7') || (v[1] == '8') || (v[2] =='9')){
+				if (!(n1 == '7') || (n2 == '8') || (n3 =='9')){
 					write(1, ", ", 2);
 			}
-v[2]++;
+
 
 }
-
-v[1]++;
-
 }
-v[0]++;
 }
 }
 int main(){
